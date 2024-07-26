@@ -30,7 +30,7 @@ Techniques such as:
 
 - using TypeScript + React Hook Form + Zod to ensure a smooth development experience regarding form handling and data validation, also with the benefit of having types and UI errors directly inferred from the defined schemas;
 
-- utilizing a global theme to ensure look and feel consistency across the application and leveraging Emotion variables and functions (e.g. the mediaQueries utility) to make the code more readable and maintainable;
+- utilizing a global styling theme to ensure look and feel consistency across the application and leveraging Emotion variables and functions (e.g. the mediaQueries utility) to make the code more readable and maintainable;
 
 - Abstracting asynchronous @tanstack/query logic with custom hooks to avoid "useEffect hell" and semplify the process of fetching and updating data from the client;
 
