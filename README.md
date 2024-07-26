@@ -34,8 +34,6 @@ Premise n.1: Being a simple CRUD application with no super complex features, the
 
 surely are some good practices to go in the right direction.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 Premise n.2:
 Despite using Next.js > 14, the application still leverages the pages router instead of the new app router, because of some <a href="https://nextjs.org/docs/app/building-your-application/styling/css-in-js">limitations and lack of support with Emotion and styled-components</a>.
 
@@ -46,15 +44,15 @@ statically at build time using the Next.js Static Site Generation (SSG) feature.
 
 This section should list any major frameworks/libraries used to develop the application.
 
-- [![Next][Next.js]][Next-url]
-- [![React][React.js]][React-url]
-- [|[TypeScript][TypeScript]][TypeScript-url]
-- [![React Query][React-Query.js]][React-Query-url]
-- [![Emotion][Emotion.js]][Emotion-url]
-- [![Zod][Zod.js]][Zod-url]
-- [![Mongoose][Mongoose.js]][Mongoose-url]
-- [![Jest][Jest.js]][Jest-url]
-- [![React Testing Library][React-Testing-Library.js]][React-Testing-Library-url]
+- Next.js
+- React
+- TypeScript
+- React Query
+- Emotion
+- Zod
+- Mongoose
+- Jest
+- React Testing Library
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
