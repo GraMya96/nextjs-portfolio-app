@@ -22,11 +22,13 @@
 
 ## Introduction
 
-A full-stack, mobile-first Next.js portfolio application designed to allow users to add their personal information (full name, brief description, and professional skills) and the projects they have worked on in the pastk, through an admin page. The design, including fonts, colors, and some element shapes, is inspired by <a href="https://www.moveagency.com/en">Move Agency</a>.
+A full-stack, mobile-first Next.js portfolio application designed to allow users to add their personal information (full name, brief description, and professional skills) and the projects they have worked on in the past, through an admin page. The design, including fonts, colors, and some element shapes, is inspired by <a href="https://www.moveagency.com/en">Move Agency</a>.
 
-Premise n.1: Being a simple CRUD application with no super complex features, the array of technologies used might appear overkill and it probably is. Though, while extensive typing and data validation using React Hook Form and Zod may seem unnecessary, this setup ensures that the project is ready for future expansions. Code quality and predictability are fundamental, especially in full-stack applications and techniques such as:
+Premise n.1: Being a simple CRUD application with no super complex features, the array of technologies used might appear overkill and it probably is. Though, while extensive typing and data validation using React Hook Form and Zod may seem unnecessary, this setup ensures that the project is ready for future expansions. Code quality and predictability are fundamental, especially in full-stack applications. 
 
-- using TypeScript + React Hook Form + Zod to ensure a smooth development experience regarding form handling and data validation, also having types and UI errors directly inferred from the defined schemas;
+Techniques such as:
+
+- using TypeScript + React Hook Form + Zod to ensure a smooth development experience regarding form handling and data validation, also with the benefit of having types and UI errors directly inferred from the defined schemas;
 
 - utilizing a global theme to ensure look and feel consistency across the application and leveraging Emotion variables and functions (e.g. the mediaQueries utility) to make the code more readable and maintainable;
 
@@ -50,6 +52,7 @@ This section should list any major frameworks/libraries used to develop the appl
 - React Query
 - Emotion
 - Zod
+- axios
 - Mongoose
 - Jest
 - React Testing Library
