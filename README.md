@@ -1,5 +1,5 @@
 <!-- TABLE OF CONTENTS -->
-<details>
+<details id="table">
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -47,12 +47,11 @@ statically at build time using the Next.js Static Site Generation (SSG) feature.
 This section should list any major frameworks/libraries used to develop the application.
 
 - Next.js
-- React
 - TypeScript
 - React Query
 - Emotion
 - Zod
-- axios
+- Axios
 - Mongoose
 - Jest
 - React Testing Library
@@ -108,4 +107,4 @@ To get a local version up and running download these dependencies and follow the
   npm run test
   ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#table">back to top</a>)</p>
