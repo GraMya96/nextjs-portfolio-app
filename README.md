@@ -44,17 +44,14 @@ statically at build time using the Next.js Static Site Generation (SSG) feature.
 
 This section should list any major frameworks/libraries used to develop the application.
 
-- Next.js
-- React
-- TypeScript
-- React Query
-- Emotion
-- Zod
-- Mongoose
-- Jest
-- React Testing Library
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- <a href="https://nextjs.org/">Next.js</a>
+- <a href="https://www.typescriptlang.org/">TypeScript</a>
+- <a href="https://tanstack.com/query/v4/docs/react/overview">TanStack Query</a>
+- <a href="https://emotion.sh/docs/introduction">Emotion</a>
+- <a href="https://zod.dev/">Zod</a>
+- <a href="https://mongoosejs.com/">Mongoose</a>
+- <a href="https://jestjs.io/">Jest</a>
+- <a href="https://testing-library.com/docs/react-testing-library/intro/">React Testing Library</a>
 
 <!-- GETTING STARTED -->
 
@@ -72,37 +69,35 @@ To get a local version up and running download these dependencies and follow the
 
 1. Clone the repository from GitHub
 
-- git
-  ```sh
-  git clone https://github.com/GraMya96/nextjs-portfolio-app.git
-  ```
+```sh
+git clone https://github.com/GraMya96/nextjs-portfolio-app.git
+```
 
 2. Install needed NPM packages
 
-- npm
-  ```sh
-  npm install
-  ```
+```sh
+npm install
+```
 
-3. Create a .env.local file in the root directory and add the following variables:
+3. Create a MongoDB instance on your local machine (you can use <a href="https://www.mongodb.com/try/download/community">MongoDB Compass</a> or any other tool of your choice) and save the Connection String URI; you will need it in the next step.
+
+4. Create a .env.local file in the root directory and add the following variables:
 
 - CLIENT_URL=\_your-client-url\*
 - MONGODB_URI=\_your-mongodb-uri\*
 
-4. Run the application, making sure that MongoDB is running locally
+5. Run the application, making sure that MongoDB is running locally
 
-- npm
-  ```sh
-  npm run dev
-  ```
+```sh
+npm run dev
+```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-5. To run component testing, run the following command:
+7. To run component testing, run the following command:
 
-- npm
-  ```sh
-  npm run test
-  ```
+```sh
+npm run test
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
