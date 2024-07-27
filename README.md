@@ -1,5 +1,5 @@
 <!-- TABLE OF CONTENTS -->
-<details>
+<details id="table">
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -22,20 +22,22 @@
 
 ## Introduction
 
-A full-stack, mobile-first Next.js portfolio application designed to allow users to add their personal information (full name, brief description, and professional skills) and the projects they have worked on in the pastk, through an admin page. The design, including fonts, colors, and some element shapes, is inspired by <a href="https://www.moveagency.com/en">Move Agency</a>.
+A full-stack, mobile-first Next.js portfolio application designed to allow users to add their personal information (full name, brief description, and professional skills) and the projects they have worked on in the past, through an admin page. The design, including fonts, colors, and some element shapes, is inspired by <a href="https://www.moveagency.com/en">Move Agency</a>.
 
-Premise n.1: Being a simple CRUD application with no super complex features, the array of technologies used might appear overkill and it probably is. Though, while extensive typing and data validation using React Hook Form and Zod may seem unnecessary, this setup ensures that the project is ready for future expansions. Code quality and predictability are fundamental, especially in full-stack applications and techniques such as:
+Premise n.1: Being a simple CRUD application with no super complex features, the array of technologies used might appear overkill and it probably is. Though, while extensive typing and data validation using React Hook Form and Zod may seem unnecessary, this setup ensures that the project is ready for future expansions. Code quality and predictability are fundamental, especially in full-stack applications.
 
-- using TypeScript + React Hook Form + Zod to ensure a smooth development experience regarding form handling and data validation, also having types and UI errors directly inferred from the defined schemas;
+Techniques such as:
 
-- utilizing a global theme to ensure look and feel consistency across the application and leveraging Emotion variables and functions (e.g. the mediaQueries utility) to make the code more readable and maintainable;
+- using TypeScript + React Hook Form + Zod to ensure a smooth development experience regarding form handling and data validation, also with the benefit of having types and UI errors directly inferred from the defined schemas;
+
+- utilizing a global styling theme to ensure look and feel consistency across the application and leveraging Emotion variables and functions (e.g. the mediaQueries utility) to make the code more readable and maintainable;
 
 - Abstracting asynchronous @tanstack/query logic with custom hooks to avoid "useEffect hell" and semplify the process of fetching and updating data from the client;
 
 surely are some good practices to go in the right direction.
 
 Premise n.2:
-Despite using Next.js > 14, the application still leverages the pages router instead of the new app router, because of some <a href="https://nextjs.org/docs/app/building-your-application/styling/css-in-js">limitations and lack of support with Emotion and styled-components</a>.
+Despite using Next.js 14.2.5, the application still leverages the pages router instead of the new app router, because of some <a href="https://nextjs.org/docs/app/building-your-application/styling/css-in-js">limitations and lack of support with Emotion and styled-components</a>.
 
 Premise n.3: All the pages (Home, About, and Admin) are generated
 statically at build time using the Next.js Static Site Generation (SSG) feature. Considering the nature of this portfolio application, there was no need to implement a heavy server-side rendering (SSR) solution.
@@ -100,4 +102,4 @@ npm run dev
 npm run test
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#table">back to top</a>)</p>
