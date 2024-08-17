@@ -20,7 +20,7 @@ import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
 
 export const getUserInfo = async (
 	req: GenericNextApiRequest<null>,
-	res: GenericNextApiResponse
+	res: GenericNextApiResponse<UserModelType[]>
 ) => {
 	try {
 		await connectDB();
@@ -36,7 +36,7 @@ export const getUserInfo = async (
 
 export const addUserInfo = async (
 	req: GenericNextApiRequest<AddUserInfoValidationType>,
-	res: GenericNextApiResponse
+	res: GenericNextApiResponse<UserModelType>
 ) => {
 	try {
 		await connectDB();
@@ -53,7 +53,7 @@ export const addUserInfo = async (
 
 export const updateUserInfo = async (
 	req: GenericNextApiRequest<UpdateUserInfoValidationType>,
-	res: GenericNextApiResponse
+	res: GenericNextApiResponse<UserModelType>
 ) => {
 	try {
 		await connectDB();

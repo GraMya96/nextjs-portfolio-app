@@ -3,7 +3,7 @@ import {
 	addUserInfo,
 	updateUserInfo,
 } from '@/controllers/user.controller';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
 
 /* This file contains the API routes for the user.
     - endpoint: api/user
@@ -17,7 +17,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
   in the controllers folder.
 */
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function handler(
+	req: GenericNextApiRequest<any>,
+	res: GenericNextApiResponse
+) {
 	switch (req.method) {
 		case 'GET':
 			getUserInfo(req, res);
