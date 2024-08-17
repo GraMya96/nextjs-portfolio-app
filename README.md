@@ -22,7 +22,7 @@
 
 ## Introduction
 
-A full-stack, mobile-first Next.js portfolio application designed to allow users to add their personal information (full name, brief description, and professional skills) and the projects they have worked on in the past, through an admin page. The design, including fonts, colors, and some element shapes, is inspired by <a href="https://www.moveagency.com/en">Move Agency</a>.
+A full-stack, mobile-first Next.js portfolio application designed to allow users to add their personal information (full name, brief description, and professional skills) and the projects they have worked on in the past, through an admin page.
 
 Premise n.1: Being a simple CRUD application with no super complex features, the array of technologies used might appear overkill and it probably is. Though, while extensive typing and data validation using React Hook Form and Zod may seem unnecessary, this setup ensures that the project is ready for future expansions. Code quality and predictability are fundamental, especially in full-stack applications.
 
