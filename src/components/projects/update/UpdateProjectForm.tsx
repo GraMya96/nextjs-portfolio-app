@@ -21,7 +21,7 @@ const UpdateProjectForm: React.FC<UpdateProjectFormProps> = ({
 
 	const updateProject = async (data: UpdateProjectValidationType) => {
 		try {
-			const response: any = await mutateAsync({
+			const response = await mutateAsync({
 				id: project._id,
 				updatedProject: data,
 			});

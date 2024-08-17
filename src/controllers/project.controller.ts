@@ -24,7 +24,7 @@ import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
 
 export const getProjects = async (
 	req: GenericNextApiRequest<null>,
-	res: GenericNextApiResponse
+	res: GenericNextApiResponse<ProjectModelType[]>
 ) => {
 	try {
 		await connectDB();
@@ -40,7 +40,7 @@ export const getProjects = async (
 
 export const addProject = async (
 	req: GenericNextApiRequest<AddProjectValidationType>,
-	res: GenericNextApiResponse
+	res: GenericNextApiResponse<ProjectModelType>
 ) => {
 	try {
 		await connectDB();
@@ -57,7 +57,7 @@ export const addProject = async (
 
 export const updateProject = async (
 	req: GenericNextApiRequest<UpdateProjectValidationType>,
-	res: GenericNextApiResponse
+	res: GenericNextApiResponse<ProjectModelType>
 ) => {
 	try {
 		await connectDB();
@@ -84,7 +84,7 @@ export const updateProject = async (
 
 export const deleteProject = async (
 	req: GenericNextApiRequest<DeleteProjectValidationType>,
-	res: GenericNextApiResponse
+	res: GenericNextApiResponse<ProjectModelType>
 ) => {
 	try {
 		await connectDB();

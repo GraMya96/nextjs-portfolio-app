@@ -1,14 +1,15 @@
+import { ProjectModelType } from './../../models/project.model';
 import { AddProjectValidationType } from '@/lib/utils/validation/project.validation';
-import { GenericNextApiResponse } from '@/types/api';
+import { GenericAxiosResponse } from '@/types/api';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 
 export const useAddProject = () => {
 	const queryClient = useQueryClient();
 
 	return useMutation({
 		mutationFn: async (newProject: AddProjectValidationType) => {
-			const response: AxiosResponse<GenericNextApiResponse> = await axios.post(
+			const response: GenericAxiosResponse<ProjectModelType> = await axios.post(
 				'/api/projects',
 				newProject
 			);

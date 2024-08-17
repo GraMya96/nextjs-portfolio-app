@@ -19,7 +19,7 @@ const AddUserInfoForm: React.FC<{ onClose?: () => void }> = ({
 				toast.error(validatedUserInfo.error.message);
 				return;
 			}
-			const response: any = await mutateAsync(userInfo);
+			const response = await mutateAsync(userInfo);
 			if (!response?.success) {
 				throw new Error(response?.error);
 			}

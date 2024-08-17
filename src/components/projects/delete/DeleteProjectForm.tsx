@@ -20,7 +20,7 @@ const DeleteProjectForm: React.FC<DeleteProjectFormProps> = ({
 
 	const deleteProject = async (data: DeleteProjectValidationType) => {
 		try {
-			const response: any = await mutateAsync(data);
+			const response = await mutateAsync(data);
 			if (!response?.success) {
 				throw new Error(response?.error);
 			}

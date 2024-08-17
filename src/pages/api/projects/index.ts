@@ -4,7 +4,7 @@ import {
 	updateProject,
 	deleteProject,
 } from '@/controllers/project.controller';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
 
 /* This file contains the API routes for the projects.
     - endpoint: api//projects
@@ -18,7 +18,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
   in the controllers folder.
 */
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function handler(
+	req: GenericNextApiRequest<any>,
+	res: GenericNextApiResponse
+) {
 	switch (req.method) {
 		case 'GET':
 			getProjects(req, res);

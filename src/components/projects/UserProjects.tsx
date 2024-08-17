@@ -3,10 +3,11 @@ import mq from '@/styles/utils/mediaQueries';
 import styled from '@emotion/styled';
 import UserProjectsLoader from '../ui/UserProjectsLoader';
 import ProjectCard from './ProjectCard';
-import { ProjectModelType } from '@/models/project.model';
 
 const UserProjects: React.FC = (): React.ReactElement => {
-	const { data: projects, isLoading } = useGetProjects();
+	const { data, isLoading } = useGetProjects();
+
+	const projects = data?.data;
 
 	return isLoading ? (
 		<UserProjectsLoader />
@@ -18,7 +19,7 @@ const UserProjects: React.FC = (): React.ReactElement => {
 				<>
 					<h2>Your Projects</h2>
 					<StyledProjectList>
-						{projects?.map((project: ProjectModelType) => (
+						{projects?.map((project) => (
 							<ProjectCard project={project} key={String(project?._id)} />
 						))}
 					</StyledProjectList>

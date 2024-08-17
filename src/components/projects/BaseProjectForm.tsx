@@ -144,6 +144,7 @@ const BaseProjectForm: React.FC<BaseProjectFormProps> = ({
 			<Button
 				onClick={() => handleValidationErrors(errors)}
 				type="submit"
+				name="submit"
 				disabled={isSubmitting}
 			>
 				{title}

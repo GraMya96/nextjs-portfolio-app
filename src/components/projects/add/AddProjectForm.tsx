@@ -23,7 +23,7 @@ const AddProjectForm: React.FC<AddProjectFormProps> = ({
 				toast.error(validatedProject.error.message);
 				return;
 			}
-			const response: any = await mutateAsync(project);
+			const response = await mutateAsync(project);
 			if (!response?.success) {
 				throw new Error(response?.error);
 			}

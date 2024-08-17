@@ -6,7 +6,6 @@ import {
 } from '@/lib/utils/validation/user.validation';
 import { toast } from 'react-toastify';
 import BaseUserInfoForm from '../BaseUserInfoForm';
-import { UserModelType } from '@/models/user.model';
 
 interface UpdateUserInfoFormProps {
 	userInfo: any;
@@ -25,7 +24,7 @@ const UpdateUserInfoForm: React.FC<UpdateUserInfoFormProps> = ({
 
 	const updateUserInfo = async (data: UpdateUserInfoValidationType) => {
 		try {
-			const response: any = await mutateAsync(data);
+			const response = await mutateAsync(data);
 			if (!response?.success) {
 				throw new Error(response?.error);
 			}

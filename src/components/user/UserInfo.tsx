@@ -8,7 +8,9 @@ import UserInfoLoader from '../ui/UserInfoLoader';
 
 const UserInfo: React.FC = (): React.ReactElement => {
 	const pathname = usePathname();
-	const { data: userInfo, isLoading } = useGetUserInfo();
+	const { data, isLoading } = useGetUserInfo();
+
+	const userInfo = data?.data?.[0];
 
 	return isLoading ? (
 		<UserInfoLoader />
@@ -19,7 +21,7 @@ const UserInfo: React.FC = (): React.ReactElement => {
                 From the moment the user is created and his information provided,
                 the proper content will be displayed.
             */}
-			{!userInfo || !userInfo?.length ? (
+			{!userInfo ? (
 				pathname !== '/about' ? (
 					<h3>
 						You can start by adding your information and past projects in the{' '}
@@ -39,10 +41,10 @@ const UserInfo: React.FC = (): React.ReactElement => {
 				<>
 					<h1>
 						{pathname === '/about' && 'Hello! My name is '}
-						{userInfo[0]?.name}
+						{userInfo?.name}
 					</h1>
-					<p>{userInfo[0]?.description}</p>
-					<SkillsList skills={userInfo[0]?.skills} />
+					<p>{userInfo?.description}</p>
+					<SkillsList skills={userInfo?.skills} />
 				</>
 			)}
 		</StyledUserInfo>

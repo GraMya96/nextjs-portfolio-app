@@ -1,16 +1,18 @@
 import { AddUserInfoValidationType } from '@/lib/utils/validation/user.validation';
 import { UserModelType } from '@/models/user.model';
+import { GenericAxiosResponse } from '@/types/api';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axios, { AxiosResponse } from 'axios';
-import { NextApiResponse } from 'next';
+import axios from 'axios';
 
 export const useAddUserInfo = () => {
 	const queryClient = useQueryClient();
 
 	return useMutation({
 		mutationFn: async (userInfo: AddUserInfoValidationType) => {
-			const response: AxiosResponse<NextApiResponse<UserModelType>> =
-				await axios.post('/api/user', userInfo);
+			const response: GenericAxiosResponse<UserModelType> = await axios.post(
+				'/api/user',
+				userInfo
+			);
 			return response.data;
 		},
 		onSuccess: () => {
