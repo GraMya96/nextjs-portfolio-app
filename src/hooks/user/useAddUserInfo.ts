@@ -1,6 +1,6 @@
 import { AddUserInfoValidationType } from '@/lib/utils/validation/user.validation';
 import { UserModelType } from '@/models/user.model';
-import { GenericAxiosResponse } from '@/types/api';
+import { GenericAxiosResponse } from '@/types/api.types';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 

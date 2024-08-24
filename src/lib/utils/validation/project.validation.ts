@@ -5,6 +5,14 @@ import { z } from 'zod';
  in the client of the application, in order to have a type-safe and predictable
  bi-directional data-flow */
 
+export const projectValidationSchema = z.object({
+	id: z.string(),
+	name: z.string(),
+	description: z.string(),
+	url: z.string().url('The url should be a valid URL'),
+	image: z.string().optional().nullish(),
+});
+
 export const addProjectValidationSchema = z.object({
 	name: z
 		.string()
@@ -26,13 +34,3 @@ export const deleteProjectValidationSchema = z.object({
 		.min(1, 'Insert a valid id')
 		.max(30, 'The id should be shorter than 30 characters'),
 });
-
-export type AddProjectValidationType = z.infer<
-	typeof addProjectValidationSchema
->;
-export type UpdateProjectValidationType = z.infer<
-	typeof updateProjectValidationSchema
->;
-export type DeleteProjectValidationType = z.infer<
-	typeof deleteProjectValidationSchema
->;

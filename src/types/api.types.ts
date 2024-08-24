@@ -19,7 +19,8 @@ export interface GenericNextApiResponse<T = any>
 		error?: string;
 	}> {}
 
-/* -------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------
+
 
 /* This interface is used on the CLIENT SIDE (e.g. in pages/projects/index.tsx)
     to type the response of every API request made using React Query to our

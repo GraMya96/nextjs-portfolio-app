@@ -1,8 +1,8 @@
-import { UpdateProjectValidationType } from '@/lib/utils/validation/project.validation';
-import { ProjectModelType } from '@/models/project.model';
+import { UpdateProjectType } from '@/types/project.types';
+import { GenericAxiosResponse } from '@/types/api.types';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import { GenericAxiosResponse } from './../../types/api';
+import { ProjectType } from '@/types/project.types';
 
 export const useUpdateProject = () => {
 	const queryClient = useQueryClient();
@@ -12,10 +12,10 @@ export const useUpdateProject = () => {
 			id,
 			updatedProject,
 		}: {
-			id: ProjectModelType['_id'];
-			updatedProject: UpdateProjectValidationType;
+			id: ProjectType['id'];
+			updatedProject: UpdateProjectType;
 		}) => {
-			const response: GenericAxiosResponse<ProjectModelType> = await axios.put(
+			const response: GenericAxiosResponse<ProjectType> = await axios.put(
 				`/api/projects?id=${id}`,
 				updatedProject
 			);

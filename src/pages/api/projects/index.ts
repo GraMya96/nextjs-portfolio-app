@@ -4,10 +4,13 @@ import {
 	updateProject,
 	deleteProject,
 } from '@/controllers/project.controller';
-import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
+import {
+	GenericNextApiRequest,
+	GenericNextApiResponse,
+} from '@/types/api.types';
 
 /* This file contains the API routes for the projects.
-    - endpoint: api//projects
+    - endpoint: api/projects
 
   Since this application is using the Next.js pages router,
   they need to be defined in the pages/api folder.

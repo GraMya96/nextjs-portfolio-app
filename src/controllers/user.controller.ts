@@ -7,7 +7,10 @@ import {
 	UpdateUserInfoValidationType,
 } from '@/lib/utils/validation/user.validation';
 import { UserModel, UserModelType } from '@/models/user.model';
-import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
+import {
+	GenericNextApiRequest,
+	GenericNextApiResponse,
+} from '@/types/api.types';
 
 /* These are the controllers to handle queries and mutations to the
  MongoDB databse using Mongoose. These functions run when

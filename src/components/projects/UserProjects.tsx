@@ -20,7 +20,7 @@ const UserProjects: React.FC = (): React.ReactElement => {
 					<h2>Your Projects</h2>
 					<StyledProjectList>
 						{projects?.map((project) => (
-							<ProjectCard project={project} key={String(project?._id)} />
+							<ProjectCard project={project} key={String(project?.id)} />
 						))}
 					</StyledProjectList>
 				</>

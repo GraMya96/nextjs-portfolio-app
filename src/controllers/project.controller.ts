@@ -2,14 +2,20 @@ import {
 	addProjectValidationSchema,
 	updateProjectValidationSchema,
 	deleteProjectValidationSchema,
-	AddProjectValidationType,
-	UpdateProjectValidationType,
-	DeleteProjectValidationType,
 } from './../lib/utils/validation/project.validation';
-import { ProjectModel, ProjectModelType } from '@/models/project.model';
+import { ProjectModel } from '@/models/project.model';
 import { connectDB } from '@/lib/connectDB';
 import { handleApiError } from '@/lib/utils/handleApiError';
-import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
+import {
+	GenericNextApiRequest,
+	GenericNextApiResponse,
+} from '@/types/api.types';
+import {
+	ProjectModelType,
+	AddProjectType,
+	UpdateProjectType,
+	DeleteProjectType,
+} from '@/types/project.types';
 
 /* These are the controllers to handle queries and mutations to the
  MongoDB databse using Mongoose. These functions run when
@@ -39,7 +45,7 @@ export const getProjects = async (
 };
 
 export const addProject = async (
-	req: GenericNextApiRequest<AddProjectValidationType>,
+	req: GenericNextApiRequest<AddProjectType>,
 	res: GenericNextApiResponse<ProjectModelType>
 ) => {
 	try {
@@ -56,7 +62,7 @@ export const addProject = async (
 };
 
 export const updateProject = async (
-	req: GenericNextApiRequest<UpdateProjectValidationType>,
+	req: GenericNextApiRequest<UpdateProjectType>,
 	res: GenericNextApiResponse<ProjectModelType>
 ) => {
 	try {
@@ -83,7 +89,7 @@ export const updateProject = async (
 };
 
 export const deleteProject = async (
-	req: GenericNextApiRequest<DeleteProjectValidationType>,
+	req: GenericNextApiRequest<DeleteProjectType>,
 	res: GenericNextApiResponse<ProjectModelType>
 ) => {
 	try {

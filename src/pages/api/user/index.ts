@@ -3,7 +3,10 @@ import {
 	addUserInfo,
 	updateUserInfo,
 } from '@/controllers/user.controller';
-import { GenericNextApiRequest, GenericNextApiResponse } from '@/types/api';
+import {
+	GenericNextApiRequest,
+	GenericNextApiResponse,
+} from '@/types/api.types';
 
 /* This file contains the API routes for the user.
     - endpoint: api/user

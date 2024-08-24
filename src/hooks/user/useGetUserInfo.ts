@@ -1,5 +1,5 @@
 import { UserModelType } from '@/models/user.model';
-import { GenericAxiosResponse } from '@/types/api';
+import { GenericAxiosResponse } from '@/types/api.types';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 

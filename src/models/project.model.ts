@@ -1,13 +1,7 @@
-import {
-	Schema,
-	model,
-	InferSchemaType,
-	Document,
-	models,
-	SchemaTimestampsConfig,
-} from 'mongoose';
+import { ProjectModelType } from '@/types/project.types';
+import { Schema, model, models } from 'mongoose';
 
-const ProjectSchema = new Schema(
+export const ProjectSchema = new Schema(
 	{
 		name: {
 			type: String,
@@ -28,10 +22,6 @@ const ProjectSchema = new Schema(
 	},
 	{ timestamps: true }
 );
-
-export type ProjectModelType = InferSchemaType<typeof ProjectSchema> &
-	Document &
-	SchemaTimestampsConfig;
 
 const ProjectModel =
 	models.Project || model<ProjectModelType>('Project', ProjectSchema);

@@ -1,4 +1,4 @@
-import { GenericNextApiResponse } from '@/types/api';
+import { GenericNextApiResponse } from '@/types/api.types';
 import { ZodError } from 'zod';
 
 /* A custom util function that handles different errors in the API responses.
