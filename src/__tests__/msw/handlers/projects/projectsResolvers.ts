@@ -1,3 +1,4 @@
+import { projectsList } from '@/__tests__/__mocks__/data/projectsList';
 import {
 	ProjectType,
 	AddProjectType,
@@ -11,52 +12,55 @@ export const getProjectsResolver: HttpResponseResolver<
 	never,
 	ProjectType[]
 > = () => {
-	return HttpResponse.json([
-		{
-			id: '1',
-			name: 'Project 1',
-			description: 'This is a project description',
-			url: 'https://project-1.com',
-		},
-		{
-			id: '2',
-			name: 'Project 2',
-			description: 'This is a project description 2',
-			url: 'https://project-2.com',
-		},
-		{
-			id: '3',
-			name: 'Project 3',
-			description: 'This is a project description 3',
-			url: 'https://project-3.com',
-		},
-	]);
+	return HttpResponse.json(projectsList);
 };
 
 export const addProjectResolver: HttpResponseResolver<
 	never,
 	AddProjectType,
-	ProjectType
-> = () => {
-	return HttpResponse.json({
-		id: '1',
-		name: 'Project 1',
-		description: 'This is a project description',
-		url: 'https://project-1.com',
-	});
+	ProjectType | ErrorCallback
+> = async ({ request }) => {
+	const { name, description, url, image } = await request.json();
+	if (!name || !description || !url) {
+		return HttpResponse.error();
+	}
+
+	return HttpResponse.json(
+		{
+			id: '1',
+			name,
+			description,
+			url,
+			image,
+		},
+		{
+			status: 200,
+		}
+	);
 };
 
 export const updateProjectResolver: HttpResponseResolver<
 	never,
 	UpdateProjectType,
 	ProjectType
-> = () => {
-	return HttpResponse.json({
-		id: '1',
-		name: 'Updated Project 1',
-		description: 'This is an updated project description',
-		url: 'https://project-1.com',
-	});
+> = async ({ request }) => {
+	const { name, description, url, image } = await request.json();
+	if (!name || !description || !url) {
+		return HttpResponse.error();
+	}
+
+	return HttpResponse.json(
+		{
+			id: '1',
+			name,
+			description,
+			url,
+			image,
+		},
+		{
+			status: 200,
+		}
+	);
 };
 
 export const deleteProjectResolver: HttpResponseResolver<
@@ -64,10 +68,5 @@ export const deleteProjectResolver: HttpResponseResolver<
 	DeleteProjectType,
 	ProjectType
 > = () => {
-	return HttpResponse.json({
-		id: '1',
-		name: 'Deleted Project 1',
-		description: 'This is a deleted project description',
-		url: 'https://project-1.com',
-	});
+	return HttpResponse.json(projectsList[0]);
 };

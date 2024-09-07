@@ -1,10 +1,8 @@
-import {
-	addProjectValidationSchema,
-	AddProjectValidationType,
-} from '@/lib/utils/validation/project.validation';
+import { addProjectValidationSchema } from '@/lib/utils/validation/project.validation';
 import BaseProjectForm from '../BaseProjectForm';
 import { useAddProject } from '@/hooks/projects/useAddProject';
 import { toast } from 'react-toastify';
+import { AddProjectType } from '@/types/project.types';
 import { handleClientError } from '@/lib/utils/handleClientError';
 
 interface AddProjectFormProps {
@@ -16,7 +14,7 @@ const AddProjectForm: React.FC<AddProjectFormProps> = ({
 }): React.ReactElement => {
 	const { mutateAsync } = useAddProject();
 
-	const addProject = async (project: AddProjectValidationType) => {
+	const addProject = async (project: AddProjectType) => {
 		try {
 			const validatedProject = addProjectValidationSchema.safeParse(project);
 			if (!validatedProject.success) {
@@ -36,9 +34,9 @@ const AddProjectForm: React.FC<AddProjectFormProps> = ({
 
 	return (
 		<BaseProjectForm
-			title="Add Project"
+			title="Add project"
 			validationSchema={addProjectValidationSchema}
-			onSubmit={(data: AddProjectValidationType) => addProject(data)}
+			onSubmit={(data: AddProjectType) => addProject(data)}
 		/>
 	);
 };

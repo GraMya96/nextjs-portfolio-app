@@ -1,5 +1,3 @@
-import { ProjectModelType } from '@/models/project.model';
-import mq from '@/styles/utils/mediaQueries';
 import styled from '@emotion/styled';
 import { XCircleIcon, DocumentIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
@@ -8,6 +6,7 @@ import { useState } from 'react';
 import UpdateProjectForm from './update/UpdateProjectForm';
 import DeleteProjectForm from './delete/DeleteProjectForm';
 import Modal from '../ui/Modal';
+import { ProjectType } from '@/types/project.types';
 
 /* Even in the front-end, the ProjectModelType (directly inferred from the Mongoose schema)
     is being used, in order to maintain type safety and predictability throughout the whole data-flow
@@ -15,7 +14,7 @@ import Modal from '../ui/Modal';
 */
 
 interface ProjectCardProps {
-	project: ProjectModelType;
+	project: ProjectType;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({

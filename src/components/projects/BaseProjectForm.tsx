@@ -1,12 +1,9 @@
-import {
-	AddProjectValidationType,
-	UpdateProjectValidationType,
-} from '@/lib/utils/validation/project.validation';
 import styled from '@emotion/styled';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ZodSchema } from 'zod';
 import Button from '../ui/Button';
+import { AddProjectType, UpdateProjectType } from '@/types/project.types';
 import Input from '../ui/Input';
 import { font } from '@/pages/_app';
 import Textarea from '../ui/Textarea';
@@ -30,7 +27,7 @@ interface BaseProjectFormProps extends React.HTMLAttributes<HTMLFormElement> {
 	title: string;
 	validationSchema: ZodSchema;
 	onSubmit: SubmitHandler<any>;
-	defaultValues?: AddProjectValidationType | UpdateProjectValidationType;
+	defaultValues?: AddProjectType | UpdateProjectType;
 }
 
 const BaseProjectForm: React.FC<BaseProjectFormProps> = ({
@@ -61,9 +58,7 @@ const BaseProjectForm: React.FC<BaseProjectFormProps> = ({
         simply "connecting" the form to its corresponding Zod validation schema
         (e.g. addProjectValidationSchema, updateProjectValidationSchema etc.).
     */
-	const handleFormSubmit = async (
-		data: AddProjectValidationType | UpdateProjectValidationType
-	) => {
+	const handleFormSubmit = async (data: AddProjectType | UpdateProjectType) => {
 		if (uploadedImage) {
 			const formData = new FormData();
 			formData.append('file', uploadedImage);

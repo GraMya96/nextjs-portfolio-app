@@ -1,7 +1,7 @@
-import { AddProjectValidationType } from '@/lib/utils/validation/project.validation';
+import { AddProjectType } from './../../../types/project.types';
 
-export const newProjectData: AddProjectValidationType = {
-	name: 'Test Product',
+export const newProjectData: AddProjectType = {
+	name: 'Test Project',
 	description: 'Test Description',
 	url: 'https://test.com',
 	image: '',

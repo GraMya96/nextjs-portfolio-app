@@ -7,8 +7,8 @@ import {
 } from './projectsResolvers';
 
 export const projectHandlers = [
-	http.get('http://127.0.0.1:3000/api/projects', getProjectsResolver),
-	http.post('http://127.0.0.1:3000/api/projects', addProjectResolver),
-	http.put('http://127.0.0.1:3000/api/projects', updateProjectResolver),
-	http.delete('http://127.0.0.1:3000/api/projects', deleteProjectResolver),
+	http.get('/api/projects', getProjectsResolver),
+	http.post('/api/projects', addProjectResolver),
+	http.put('/api/projects', updateProjectResolver),
+	http.delete('/api/projects', deleteProjectResolver),
 ];
