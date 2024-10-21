@@ -1,10 +1,10 @@
 import mongoose, { MongooseError } from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || '';
+const DB_URI = process.env.MONGODB_URI || '';
 
-if (!MONGODB_URI) {
+if (!DB_URI) {
 	throw new Error(
-		'Please define the MONGODB_URI environment variable inside .env.local'
+		'Please define the DB_URI environment variable inside .env.local'
 	);
 }
 
@@ -15,10 +15,7 @@ export const connectDB = async () => {
 		}
 
 		const mongooseOptions = { bufferCommands: false };
-		const mongooseInstance = await mongoose.connect(
-			MONGODB_URI,
-			mongooseOptions
-		);
+		const mongooseInstance = await mongoose.connect(DB_URI, mongooseOptions);
 		return mongooseInstance;
 	} catch (error: unknown) {
 		if (error instanceof MongooseError) {

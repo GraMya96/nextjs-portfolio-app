@@ -86,7 +86,7 @@ npm install
 4. Create a .env.local file in the root directory and add the following variables:
 
 - CLIENT_URL=\_your-client-url\*
-- MONGODB_URI=\_your-mongodb-uri\*
+- DB_URI=\_your-mongodb-uri\*
 
 5. Run the application, making sure that MongoDB is running locally
 

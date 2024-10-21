@@ -1,16 +1,7 @@
-// DA VEDERE:
-// - funzione dinamica createServer che lui riusa ogni volta deve
-// mockare una chiamata api direttamente nel describe block
-// così da scopare beforeAll e afterAll e afterEaCH (quindi l'apertura
-// e chiusura del server). In un altro describe block usa
-// la stessa createServer ma con diversa response. Meglio questo approccio
-// o il mio? provare a vedere come e quando runnano le funzioni nei
-// beforeEach etc. usando console.log
-
-// - il server deve essere aperto e chiuso (e le chiamate API mockate con msw)
-// solo quando runniamo integartion test, nel caso di questa app,
-// non devono runnare quando ci sono unit UI tests, che riguardano solo
-// i singoli componenti (UI, props ricevute e runnate etc.)
+// RISOLVERE:
+// test:unit e test:integration commands on package.json
+// per ora non funzionano, sembra non riescere a trovare i test nei
+// path specificati (./src/__tests__/projects/unit e ./src/__tests__/projects/integration)
 
 import { ThemeProvider } from '@emotion/react';
 import { render, screen } from '@testing-library/react';
@@ -19,6 +10,7 @@ import theme from '@/styles/theme';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import userEvent from '@testing-library/user-event';
 import { AddProjectType, UpdateProjectType } from '@/types/project.types';
+import { server } from '../msw/server';
 
 const queryClient = new QueryClient();
 
@@ -90,6 +82,13 @@ const openModal = async (
 	await user.click(elementToClick);
 };
 
+// To use only in integration tests where there is a need to mock API calls
+const createServer = () => {
+	beforeAll(() => server.listen());
+	afterEach(() => server.resetHandlers());
+	afterAll(() => server.close());
+};
+
 export * from '@testing-library/react';
 export {
 	customRender as render,
@@ -98,4 +97,5 @@ export {
 	submitForm,
 	addNewProject,
 	updateProject,
+	createServer,
 };

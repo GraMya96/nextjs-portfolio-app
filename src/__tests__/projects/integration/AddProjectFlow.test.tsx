@@ -1,5 +1,10 @@
 import { expect } from '@jest/globals';
-import { addNewProject, screen, waitFor } from '../../utils/testUtils';
+import {
+	addNewProject,
+	screen,
+	waitFor,
+	createServer,
+} from '../../utils/testUtils';
 import { newProjectData } from '../../__mocks__/data/newProject';
 import AddProjectForm from '@/components/projects/add/AddProjectForm';
 
@@ -9,6 +14,8 @@ import AddProjectForm from '@/components/projects/add/AddProjectForm';
  */
 
 describe('Integration Tests for AddProject creation:', () => {
+	createServer();
+
 	it('shows the new project in the list of projects when API call succeeds', async () => {
 		await addNewProject(newProjectData, <AddProjectForm />);
 

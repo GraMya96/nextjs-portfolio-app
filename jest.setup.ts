@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
 import '@testing-library/jest-dom';
-import { server } from '@/__tests__/msw/server';
 
 /* -------------------------------------------------------------------------------- */
 
@@ -17,10 +16,3 @@ import { server } from '@/__tests__/msw/server';
     const asyncHeading = await findByRole('heading');
     expect(asyncHeading).toHaveTextContent('Title');
 */
-
-// Check if we are running integration tests
-if (process.env.TEST_TYPE === 'integration') {
-	beforeAll(() => server.listen());
-	afterEach(() => server.resetHandlers());
-	afterAll(() => server.close());
-}
